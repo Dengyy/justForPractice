@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charest=utf-8;">
+	<title>dropdown-css</title>
+</head>
+<style type="text/css">
+	/*IE的position:absolute会发生错位*/
+	*{padding: 0}
+	ul{list-style: none;border: 1px solid #ccc;}
+	a{text-decoration: none;}
+	a:link{color: black;}
+	a:hover{color:red;}
+	.first,.first>li{float: left;border-right: 1px solid #ccc;text-align: center;}/*>选择直接子元素*/
+	.first:last-child{border-right: 0}/*IE不支持*/
+	li{padding: 10px;width: 100px;height: 20px;text-align: left;}
+	.second,.third{display: none;position: absolute;background: #fff;}
+	.second{margin-left: -11px;margin-top: 12px;}
+	.third{margin-left: 105px;margin-top: -23px;}
+	.first-li:hover{background: #ccc;}
+	.first-li:hover .second{display: block;}
+	.second:hover,.second-li:hover .third{display: block;}
+	.has-child>a:after{content: "\00BB"; float: right;}
+</style>
+<body>
+<nav>
+	<ul class="first">
+		<li class="first-li"><a href="">第一层第1个</a>
+			<ul class="second">
+				<li class="second-li has-child"><a href="">1.1</a>
+					<ul class="third">
+						<li><a href="">1.1.1</a></li>
+						<li><a href="">1.1.2</a></li>
+						<li><a href="">1.1.3</a></li>
+					</ul>
+				</li>
+				<li class="second-li"><a href="">1.2</a></li>
+				<li class="second-li has-child"><a href="">1.3</a>
+					<ul class="third">
+						<li><a href="">1.3.1</a></li>
+						<li><a href="">1.3.2</a></li>
+						<li><a href="">1.3.3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="first-li"><a href="">第一层第2个</a>
+			<ul class="second">
+				<li><a href="">2.1</a></li>
+				<li><a href="">2.2</a></li>
+				<li><a href="">2.3</a></li>
+			</ul>
+		</li>
+		<li class="first-li"><a href="">第一层第3个</a>
+			<ul class="second">
+				<li><a href="">3.1</a></li>
+				<li><a href="">3.2</a></li>
+				<li><a href="">3.3</a></li>
+			</ul>
+		</li>
+		<li class="first-li"><a href="">第一层第4个</a>
+			<ul class="second">
+				<li><a href="">4.1</a></li>
+				<li><a href="">4.2</a></li>
+				<li><a href="">4.3</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+</body>
+</html>
